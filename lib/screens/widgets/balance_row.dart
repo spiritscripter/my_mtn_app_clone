@@ -16,7 +16,7 @@ class BalanceRow extends StatelessWidget {
             Text(
               'Balances',
               style: TextStyle(
-                fontSize: getProportionateScreenHeight(18),
+                fontSize: 18.h,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -25,7 +25,7 @@ class BalanceRow extends StatelessWidget {
               onTap: () {},
               child: Icon(
                 Icons.refresh,
-                size: getProportionateScreenHeight(18),
+                size: 18.h,
               ),
             ),
           ],

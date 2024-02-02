@@ -7,13 +7,12 @@ Row buildViewAllBtn() {
       Text(
         'View all',
         style: TextStyle(
-          fontSize: getProportionateScreenHeight(18),
+          fontSize: 18.h,
           fontWeight: FontWeight.w400,
         ),
       ),
       2.width,
-      Icon(Icons.arrow_circle_right_rounded,
-          size: getProportionateScreenHeight(15)),
+      Icon(Icons.arrow_circle_right_rounded, size: 15.h),
     ],
   );
 }

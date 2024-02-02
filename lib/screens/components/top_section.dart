@@ -14,15 +14,15 @@ class TopSection extends StatelessWidget {
       children: [
         Image.asset(
           'assets/logo.png',
-          height: getProportionateScreenHeight(50),
-          width: getProportionateScreenWidth(50),
+          height: 50.h,
+          width: 50.w,
         ),
         Text.rich(
           TextSpan(
             text: 'Yo!',
             style: TextStyle(
               color: Colors.black,
-              fontSize: getProportionateScreenHeight(20),
+              fontSize: 20.h,
               fontWeight: FontWeight.bold,
             ),
             children: [
@@ -30,7 +30,7 @@ class TopSection extends StatelessWidget {
                 text: ' MTN GHANA',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: getProportionateScreenHeight(20),
+                  fontSize: 20.h,
                   fontWeight: FontWeight.w400,
                 ),
               ),

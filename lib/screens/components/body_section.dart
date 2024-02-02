@@ -47,14 +47,12 @@ class BodySection extends StatelessWidget {
           children: [
             20.height,
             Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(15)),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: const BalanceRow(),
             ),
             5.height,
             Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(15)),
+              padding: EdgeInsets.symmetric(horizontal: (15.w)),
               child: GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2,
@@ -90,7 +88,7 @@ class BodySection extends StatelessWidget {
             Text(
               "Showing balances as at Jan 30 2024; 2:42:34 PM",
               style: TextStyle(
-                fontSize: getProportionateScreenHeight(13),
+                fontSize: 13.h,
                 fontWeight: FontWeight.w400,
                 color: Colors.grey,
               ),
@@ -99,8 +97,8 @@ class BodySection extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20),
-                vertical: getProportionateScreenHeight(30),
+                horizontal: 20.w,
+                vertical: 30.h,
               ),
               decoration: const BoxDecoration(
                 color: ColorConstants.kbackground2,
@@ -117,7 +115,7 @@ class BodySection extends StatelessWidget {
                       Text(
                         'Quick access',
                         style: TextStyle(
-                          fontSize: getProportionateScreenHeight(20),
+                          fontSize: 20.h,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -151,7 +149,7 @@ class BodySection extends StatelessWidget {
                   Text(
                     'Pulse Offers and Loyalty',
                     style: TextStyle(
-                      fontSize: getProportionateScreenHeight(20),
+                      fontSize: 20.h,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -166,8 +164,7 @@ class BodySection extends StatelessWidget {
 
   buildQuickAccessCard({required String type}) {
     return Container(
-      padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: BoxDecoration(
         color: const Color(0xFF323232),
         borderRadius: BorderRadius.circular(10),
@@ -179,7 +176,7 @@ class BodySection extends StatelessWidget {
           child: Icon(
             Icons.phone_in_talk_rounded,
             color: Colors.black,
-            size: getProportionateScreenHeight(20),
+            size: 20.h,
           ),
         ),
         5.width,
@@ -189,7 +186,7 @@ class BodySection extends StatelessWidget {
             color: Colors.white,
             fontWeight: FontWeight.w800,
             letterSpacing: 1.0,
-            fontSize: getProportionateScreenHeight(16),
+            fontSize: 16.h,
           ),
         ),
       ]),
@@ -202,10 +199,10 @@ class BodySection extends StatelessWidget {
       required IconData icon}) {
     return Container(
       padding: EdgeInsets.only(
-        top: getProportionateScreenWidth(10),
-        left: getProportionateScreenWidth(2),
-        right: getProportionateScreenWidth(2),
-        bottom: getProportionateScreenHeight(2),
+        top: 10.w,
+        left: 2.w,
+        right: 2.w,
+        bottom: 2.h,
       ),
       decoration: BoxDecoration(
         color: ColorConstants.kprimary,
@@ -224,19 +221,18 @@ class BodySection extends StatelessWidget {
         crossAxisAlignment: crossStart,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(10)),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Row(
               children: [
                 Icon(
                   icon,
-                  size: getProportionateScreenHeight(15),
+                  size: 15.h,
                 ),
                 5.width,
                 Text(
                   balanceType.toUpperCase(),
                   style: TextStyle(
-                    fontSize: getProportionateScreenHeight(15),
+                    fontSize: 15.h,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -246,8 +242,8 @@ class BodySection extends StatelessWidget {
           const Spacer(),
           Container(
             padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(10),
-              vertical: getProportionateScreenHeight(5),
+              horizontal: 10.w,
+              vertical: 5.h,
             ),
             decoration: const BoxDecoration(
                 color: ColorConstants.kbackground,
@@ -262,9 +258,8 @@ class BodySection extends StatelessWidget {
                 Text(
                   amount,
                   style: TextStyle(
-                    fontSize: balanceType == BalanceType.broadband.name
-                        ? getProportionateScreenHeight(15)
-                        : getProportionateScreenHeight(18),
+                    fontSize:
+                        balanceType == BalanceType.broadband.name ? 15.h : 18.h,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -273,7 +268,7 @@ class BodySection extends StatelessWidget {
                   Text(
                     "CLICK HERE",
                     style: TextStyle(
-                      fontSize: getProportionateScreenHeight(12),
+                      fontSize: 12.h,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -281,7 +276,7 @@ class BodySection extends StatelessWidget {
                   Text(
                     "BONUS :",
                     style: TextStyle(
-                      fontSize: getProportionateScreenHeight(12),
+                      fontSize: 12.h,
                       fontWeight: FontWeight.w700,
                     ),
                   ),

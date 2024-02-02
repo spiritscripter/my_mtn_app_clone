@@ -4,9 +4,9 @@ import 'size_config.dart';
 
 extension SizedBoxExtension on num {
   SizedBox get height => SizedBox(
-        height: getProportionateScreenHeight(toDouble()),
+        height: h.toDouble(),
       );
   SizedBox get width => SizedBox(
-        width: getProportionateScreenWidth(toDouble()),
+        width: w.toDouble(),
       );
 }
