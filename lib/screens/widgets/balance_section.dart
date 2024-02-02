@@ -4,7 +4,7 @@ import 'package:my_mtn_app/shared/color_constants.dart';
 
 import 'reusable_widgets.dart';
 
-enum BalanceType { airtime, data, broadband, sms }
+enum BalanceType { airtime, data, sms, broadband }
 
 // map the quick access type to the corresponding string value
 extension BalanceTypeExtension on BalanceType {
@@ -75,31 +75,32 @@ class BalanceSection extends StatelessWidget {
           ],
         ),
         15.height,
-        GridView.count(
+        GridView.builder(
           shrinkWrap: true,
-          crossAxisCount: 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-          childAspectRatio: 1.6,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+            childAspectRatio: 1.6,
+          ),
           physics: const NeverScrollableScrollPhysics(),
-          children: [
-            buildBalanceCard(
-              balanceType: BalanceType.airtime,
-              amount: 'GHS 0.00',
-            ),
-            buildBalanceCard(
-              balanceType: BalanceType.data,
-              amount: '0.00 GB',
-            ),
-            buildBalanceCard(
-              balanceType: BalanceType.sms,
-              amount: '0.00 SMS',
-            ),
-            buildBalanceCard(
-              balanceType: BalanceType.broadband,
-              amount: 'GET CONNECTED',
-            ),
-          ],
+          itemCount: BalanceType.values.length,
+          itemBuilder: (context, index) {
+            String amount = '';
+            if (BalanceType.values[index] == BalanceType.data) {
+              amount = '0.0 GB';
+            }
+            if (BalanceType.values[index] == BalanceType.airtime) {
+              amount = 'GHS 0.00';
+            }
+            if (BalanceType.values[index] == BalanceType.sms) {
+              amount = '0 SMS';
+            }
+            return buildBalanceCard(
+              balanceType: BalanceType.values[index],
+              amount: amount,
+            );
+          },
         ),
       ],
     );
@@ -168,7 +169,9 @@ class BalanceSection extends StatelessWidget {
               crossAxisAlignment: crossStart,
               children: [
                 Text(
-                  amount,
+                  balanceType == BalanceType.broadband
+                      ? "GET CONNECTED"
+                      : amount,
                   style: TextStyle(
                     fontSize:
                         balanceType == BalanceType.broadband ? 15.h : 18.h,
