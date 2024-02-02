@@ -2,15 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 
 import '../../shared/color_constants.dart';
-import '../widgets/balance_row.dart';
+import '../widgets/balance_section.dart';
 import '../widgets/reusable_widgets.dart';
-
-enum BalanceType { airtime, data, broadband, sms }
 
 enum QuickAccessType { data, just4U, momo, mashup }
 
 // map the quick access type to the corresponding string value
 extension QuickAccessTypeExtension on QuickAccessType {
+  IconData get icon {
+    switch (this) {
+      case QuickAccessType.data:
+        return Icons.signal_cellular_alt_rounded;
+
+      case QuickAccessType.just4U:
+        return Icons.card_giftcard_rounded;
+
+      case QuickAccessType.momo:
+        return Icons.money_rounded;
+
+      case QuickAccessType.mashup:
+        return Icons.storage_rounded;
+      default:
+        return Icons.no_encryption;
+    }
+  }
+
   String get name {
     switch (this) {
       case QuickAccessType.data:
@@ -48,41 +64,7 @@ class BodySection extends StatelessWidget {
             20.height,
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: const BalanceRow(),
-            ),
-            5.height,
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: (15.w)),
-              child: GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20,
-                childAspectRatio: 1.6,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  buildBalanceCard(
-                    balanceType: BalanceType.airtime.name,
-                    amount: 'GHS 0.00',
-                    icon: Icons.phone_in_talk_rounded,
-                  ),
-                  buildBalanceCard(
-                    balanceType: BalanceType.data.name,
-                    amount: '0.00 GB',
-                    icon: Icons.data_usage_outlined,
-                  ),
-                  buildBalanceCard(
-                    balanceType: BalanceType.sms.name,
-                    amount: '0.00 SMS',
-                    icon: Icons.email_outlined,
-                  ),
-                  buildBalanceCard(
-                    balanceType: BalanceType.broadband.name,
-                    amount: 'GET CONNECTED',
-                    icon: Icons.wifi_rounded,
-                  ),
-                ],
-              ),
+              child: const BalanceSection(),
             ),
             40.height,
             Text(
@@ -132,16 +114,16 @@ class BodySection extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       buildQuickAccessCard(
-                        type: QuickAccessType.data.name,
+                        type: QuickAccessType.data,
                       ),
                       buildQuickAccessCard(
-                        type: QuickAccessType.data.name,
+                        type: QuickAccessType.just4U,
                       ),
                       buildQuickAccessCard(
-                        type: QuickAccessType.data.name,
+                        type: QuickAccessType.momo,
                       ),
                       buildQuickAccessCard(
-                        type: QuickAccessType.data.name,
+                        type: QuickAccessType.mashup,
                       ),
                     ],
                   ),
@@ -153,6 +135,15 @@ class BodySection extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  20.height,
+                  Container(
+                    height: 100.h,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: ColorConstants.kprimary,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -162,7 +153,7 @@ class BodySection extends StatelessWidget {
     );
   }
 
-  buildQuickAccessCard({required String type}) {
+  buildQuickAccessCard({required QuickAccessType type}) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: BoxDecoration(
@@ -174,117 +165,22 @@ class BodySection extends StatelessWidget {
           radius: 15,
           backgroundColor: Colors.white,
           child: Icon(
-            Icons.phone_in_talk_rounded,
+            type.icon,
             color: Colors.black,
             size: 20.h,
           ),
         ),
         5.width,
         Text(
-          type,
+          type.name,
           style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.0,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 1.2,
             fontSize: 16.h,
           ),
         ),
       ]),
-    );
-  }
-
-  buildBalanceCard(
-      {required String balanceType,
-      required String amount,
-      required IconData icon}) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 10.w,
-        left: 2.w,
-        right: 2.w,
-        bottom: 2.h,
-      ),
-      decoration: BoxDecoration(
-        color: ColorConstants.kprimary,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 1,
-            blurRadius: 2,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: mainSpaceBetween,
-        crossAxisAlignment: crossStart,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w),
-            child: Row(
-              children: [
-                Icon(
-                  icon,
-                  size: 15.h,
-                ),
-                5.width,
-                Text(
-                  balanceType.toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 15.h,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Spacer(),
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 10.w,
-              vertical: 5.h,
-            ),
-            decoration: const BoxDecoration(
-                color: ColorConstants.kbackground,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
-                )),
-            child: Column(
-              crossAxisAlignment: crossStart,
-              children: [
-                Text(
-                  amount,
-                  style: TextStyle(
-                    fontSize:
-                        balanceType == BalanceType.broadband.name ? 15.h : 18.h,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Divider(color: Colors.grey.withOpacity(0.2)),
-                if (balanceType == BalanceType.broadband.name) ...[
-                  Text(
-                    "CLICK HERE",
-                    style: TextStyle(
-                      fontSize: 12.h,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ] else
-                  Text(
-                    "BONUS :",
-                    style: TextStyle(
-                      fontSize: 12.h,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
