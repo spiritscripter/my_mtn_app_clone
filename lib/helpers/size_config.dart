@@ -15,7 +15,7 @@ class ScreenSize {
   static late Size _mediaQueryData;
   static late double screenWidth;
   static late double screenHeight;
-  static late double defaultSize;
+  // static late double defaultSize;
   static late Orientation orientation;
 
   void init(BuildContext context) {
@@ -26,40 +26,42 @@ class ScreenSize {
   }
 }
 
-// Get the proportionate height as per screen size
-double getProportionateScreenHeight(double inputHeight) {
-  double screenHeight = ScreenSize.screenHeight;
-  // 812 is the layout height the designer used
+extension SizeExtension on num {
+  double get h {
+    double screenHeight = ScreenSize.screenHeight;
+    // 812 is the layout height the designer used
 
-  // shortestSide helps determine the type of device
-  // if less than 600, then it is a phone
-  if (ScreenSize._mediaQueryData.shortestSide < 600) {
-    if (ScreenSize.orientation == Orientation.portrait) {
-      return (inputHeight / 812.0) * screenHeight;
-    } else {
-      return (inputHeight / 375.0) * screenHeight;
+    // shortestSide helps determine the type of device
+    // if less than 600, then it is a phone
+    if (ScreenSize._mediaQueryData.shortestSide < 600) {
+      if (ScreenSize.orientation == Orientation.portrait) {
+        return (this / 812.0) * screenHeight;
+      } else {
+        return (this / 375.0) * screenHeight;
+      }
     }
+
+    return (this / 812.0) * screenHeight;
   }
 
-  return (inputHeight / 812.0) * screenHeight;
-}
+  double get w {
+    double screenWidth = ScreenSize.screenWidth;
+    // 375 is the layout width that designer use
 
-// Get the proportionate height as per screen size
-double getProportionateScreenWidth(double inputWidth) {
-  double screenWidth = ScreenSize.screenWidth;
-  // 375 is the layout width that designer use
-
-  // shortestSide helps determine the type of device
-  // if less than 600, then it is a phone
-  if (ScreenSize._mediaQueryData.shortestSide < 600) {
-    if (ScreenSize.orientation == Orientation.portrait) {
-      return (inputWidth / 375.0) * screenWidth;
-    } else {
-      return (inputWidth / 812.0) * screenWidth;
+    // shortestSide helps determine the type of device
+    // if less than 600, then it is a phone
+    if (ScreenSize._mediaQueryData.shortestSide < 600) {
+      if (ScreenSize.orientation == Orientation.portrait) {
+        return (this / 375.0) * screenWidth;
+      } else {
+        return (this / 812.0) * screenWidth;
+      }
     }
+
+    return (this / 375.0) * screenWidth;
   }
 
-  return (inputWidth / 375.0) * screenWidth;
+  num get text => ScreenSize.screenWidth * (this / 100);
 }
 
 // Column and Row alignmnet usables
