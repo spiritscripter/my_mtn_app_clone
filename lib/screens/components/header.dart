@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../helpers/size_config.dart';
 
-class TopSection extends StatelessWidget {
-  const TopSection({
+class Header extends StatelessWidget {
+  const Header({
     super.key,
   });
 
