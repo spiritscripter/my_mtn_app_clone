@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 
-import 'offers.dart';
-import 'reusable_widgets.dart';
+import '../../widgets/offers.dart';
+import '../../widgets/reusable_widgets.dart';
 
 enum QuickAccessType { data, just4U, momo, mashup }
 
