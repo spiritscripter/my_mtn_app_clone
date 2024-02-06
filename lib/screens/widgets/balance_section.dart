@@ -156,7 +156,7 @@ class BalanceSection extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: 10.w,
-              vertical: 5.h,
+              vertical: 7.h,
             ),
             decoration: const BoxDecoration(
                 color: ColorConstants.kbackground,
