@@ -5,7 +5,7 @@ import 'package:my_mtn_app/screens/widgets/offers.dart';
 import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
 
-import '../components/header.dart';
+import '../widgets/header.dart';
 
 @RoutePage()
 class ShopScreen extends StatelessWidget {

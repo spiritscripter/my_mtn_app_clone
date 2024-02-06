@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
-import 'package:my_mtn_app/screens/components/header.dart';
+import 'package:my_mtn_app/screens/widgets/header.dart';
 import 'package:my_mtn_app/screens/widgets/offers.dart';
 import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
 import 'package:my_mtn_app/shared/app_background.dart';
