@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
-import 'package:my_mtn_app/shared/color_constants.dart';
 
+import 'offers.dart';
 import 'reusable_widgets.dart';
 
 enum QuickAccessType { data, just4U, momo, mashup }
@@ -47,70 +47,34 @@ class QuickAccessSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.w,
-        vertical: 30.h,
-      ),
-      decoration: const BoxDecoration(
-        color: ColorConstants.kbackground2,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
+    return Column(
+      crossAxisAlignment: crossStart,
+      children: [
+        Row(
+          mainAxisAlignment: mainSpaceBetween,
+          children: [
+            buildTextHeader('Quick access'),
+            buildViewAllBtn(),
+          ],
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: crossStart,
-        children: [
-          Row(
-            mainAxisAlignment: mainSpaceBetween,
-            children: [
-              Text(
-                'Quick access',
-                style: TextStyle(
-                  fontSize: 20.h,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              buildViewAllBtn(),
-            ],
+        20.height,
+        GridView.builder(
+          shrinkWrap: true,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 14,
+            childAspectRatio: 2.9,
           ),
-          20.height,
-          GridView.builder(
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 14,
-              childAspectRatio: 2.9,
-            ),
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: QuickAccessType.values.length,
-            itemBuilder: (context, index) {
-              return buildQuickAccessCard(
-                type: QuickAccessType.values[index],
-              );
-            },
-          ),
-          40.height,
-          Text(
-            'Pulse Offers and Loyalty',
-            style: TextStyle(
-              fontSize: 20.h,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          20.height,
-          Container(
-            height: 100.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: ColorConstants.kprimary,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-        ],
-      ),
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: QuickAccessType.values.length,
+          itemBuilder: (context, index) {
+            return buildQuickAccessCard(type: QuickAccessType.values[index]);
+          },
+        ),
+        40.height,
+        const Offers(headerText: 'Pulse Offers and Loyalty'),
+      ],
     );
   }
 
