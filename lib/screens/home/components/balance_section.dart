@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
 
-import 'reusable_widgets.dart';
+import '../../widgets/reusable_widgets.dart';
 
 enum BalanceType { airtime, data, sms, broadband }
 
