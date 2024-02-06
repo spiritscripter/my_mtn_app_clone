@@ -4,9 +4,9 @@ import 'package:my_mtn_app/helpers/size_config.dart';
 import 'package:my_mtn_app/helpers/sizedbox_ext.dart';
 import 'package:my_mtn_app/shared/app_background.dart';
 
-import 'components/header.dart';
-import 'widgets/balance_section.dart';
-import 'widgets/quick_access_section.dart';
+import '../components/header.dart';
+import '../widgets/balance_section.dart';
+import '../widgets/quick_access_section.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
