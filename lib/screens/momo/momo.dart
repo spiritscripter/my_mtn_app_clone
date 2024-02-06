@@ -7,6 +7,46 @@ import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
 import 'package:my_mtn_app/shared/app_background.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
 
+enum MomoServices { send, statement, cashout, approvals }
+
+extension MomoServicesExtension on MomoServices {
+  IconData get icon {
+    switch (this) {
+      case MomoServices.send:
+        return Icons.stacked_bar_chart;
+
+      case MomoServices.statement:
+        return Icons.stacked_line_chart;
+
+      case MomoServices.cashout:
+        return Icons.money_rounded;
+
+      case MomoServices.approvals:
+        return Icons.approval_rounded;
+      default:
+        return Icons.no_encryption;
+    }
+  }
+
+  String get name {
+    switch (this) {
+      case MomoServices.send:
+        return 'Send Momo';
+
+      case MomoServices.statement:
+        return 'Statement';
+
+      case MomoServices.cashout:
+        return 'Cashout';
+
+      case MomoServices.approvals:
+        return 'Approvals';
+      default:
+        return '';
+    }
+  }
+}
+
 @RoutePage()
 class MomoScreen extends StatelessWidget {
   const MomoScreen({super.key});
@@ -141,7 +181,7 @@ class MomoScreen extends StatelessWidget {
                     buildTextHeader('Services'),
                     20.height,
                     GridView.builder(
-                      itemCount: 4,
+                      itemCount: MomoServices.values.length,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate:
@@ -152,27 +192,28 @@ class MomoScreen extends StatelessWidget {
                         return Column(
                           children: [
                             Container(
-                              height: 70.h,
-                              width: 70.w,
+                              height: 60.h,
+                              width: 60.w,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF004f70),
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.blueGrey.withOpacity(0.5),
-                                    blurRadius: 8,
+                                    blurRadius: 6,
                                     spreadRadius: 1,
                                   ),
                                 ],
                               ),
-                              child: const Icon(
-                                Icons.stacked_bar_chart,
+                              child: Icon(
+                                MomoServices.values[index].icon,
                                 color: Colors.white,
+                                size: 30.h,
                               ),
                             ),
                             10.height,
                             Text(
-                              'Send Momo',
+                              MomoServices.values[index].name,
                               style: TextStyle(
                                 fontSize: 15.h,
                                 letterSpacing: 1.0,
