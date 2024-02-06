@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:my_mtn_app/screens/home.dart';
-import 'package:my_mtn_app/screens/momo.dart';
-import 'package:my_mtn_app/screens/more.dart';
-import 'package:my_mtn_app/screens/shop.dart';
+import 'package:my_mtn_app/screens/home/home.dart';
+import 'package:my_mtn_app/screens/momo/momo.dart';
+import 'package:my_mtn_app/screens/more/more.dart';
+import 'package:my_mtn_app/screens/shop/shop.dart';
 import 'package:my_mtn_app/screens/main_bottom_bar_screen.dart';
 
 part 'router.gr.dart';
