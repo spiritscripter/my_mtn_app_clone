@@ -110,7 +110,7 @@ class MomoScreen extends StatelessWidget {
                               )),
                           12.width,
                           Image.asset(
-                            'assets/logo.png',
+                            'assets/momo.png',
                             height: 50.h,
                             width: 50.w,
                           ),
@@ -122,11 +122,11 @@ class MomoScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CircleAvatar(
-                                    radius: 10,
+                                    radius: 8,
                                     backgroundColor: ColorConstants.kprimary,
                                     child: Icon(
                                       Icons.phone_android_rounded,
-                                      size: 15.h,
+                                      size: 10.h,
                                     ),
                                   ),
                                   5.width,
