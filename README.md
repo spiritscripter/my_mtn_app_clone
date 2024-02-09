@@ -1,4 +1,5 @@
 <img src="mtn_clone.png" alt="MTN Ghana App Clone Screenshot" width="900">
+
 # MyMTN Clone - A Clone of the MTN Ghana App
 
 **Note:** This is a clone of the MTN Ghana app's UI only and does not offer any official functionality.
