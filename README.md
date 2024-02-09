@@ -10,7 +10,7 @@ MyMTN is a clone of the official MTN Ghana app focusing solely on replicating th
 
 ## Features
 
-- **Cloned UI:** Explore the app's design and layout including sections like Personal, Business, About, Explore, Help, and Contact.
+- **Cloned UI:** Explore the app's design and layout including sections like Momo, Account Balance, Shop etc.
 - **Open Source:** Feel free to contribute to the project by forking the repository and making pull requests.
 
 ## Requirements
@@ -20,8 +20,11 @@ MyMTN is a clone of the official MTN Ghana app focusing solely on replicating th
 
 ## Installation
 
-1. Clone this repository: git clone https://github.com/EAshitey/my_mtn_app_clone.git
-2. No further installation steps are required. You can freely explore the UI in the cloned directory.
+1. Clone this repository:
+   ```
+   git clone https://github.com/EAshitey/my_mtn_app_clone.git
+   ```
+3. No further installation steps are required. You can freely explore the UI in the cloned directory.
 
 ## Contributing
 
@@ -35,9 +38,6 @@ Please follow the contribution guidelines outlined in the ```CONTRIBUTING.md``` 
 ## Disclaimer
 
 This project is not affiliated with MTN Ghana in any way. It is solely a UI clone for educational and exploratory purposes. Please refer to the official MTN Ghana app for any official services and functionalities.
-License
-
-This project is licensed under the MIT License (see LICENSE file for details).
 
 Tags
 
