@@ -7,44 +7,28 @@ import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
 import 'package:my_mtn_app/shared/app_background.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
 
-enum MomoServices { send, statement, cashout, approvals }
+enum MomoServices {
+  send,
+  statement,
+  cashout,
+  approvals;
 
-extension MomoServicesExtension on MomoServices {
   IconData get icon {
-    switch (this) {
-      case MomoServices.send:
-        return Icons.stacked_bar_chart;
-
-      case MomoServices.statement:
-        return Icons.stacked_line_chart;
-
-      case MomoServices.cashout:
-        return Icons.money_rounded;
-
-      case MomoServices.approvals:
-        return Icons.approval_rounded;
-      default:
-        return Icons.no_encryption;
-    }
+    return switch (this) {
+      MomoServices.send => Icons.stacked_bar_chart,
+      MomoServices.statement => Icons.stacked_line_chart,
+      MomoServices.cashout => Icons.money_rounded,
+      MomoServices.approvals => Icons.approval_rounded,
+    };
   }
 
-  String get name {
-    switch (this) {
-      case MomoServices.send:
-        return 'Send Momo';
-
-      case MomoServices.statement:
-        return 'Statement';
-
-      case MomoServices.cashout:
-        return 'Cashout';
-
-      case MomoServices.approvals:
-        return 'Approvals';
-      default:
-        return '';
-    }
-  }
+  @override
+  String toString() => switch (this) {
+        MomoServices.send => 'Send Momo',
+        MomoServices.statement => 'Statement',
+        MomoServices.cashout => 'Cashout',
+        MomoServices.approvals => 'Approvals',
+      };
 }
 
 @RoutePage()
@@ -213,7 +197,7 @@ class MomoScreen extends StatelessWidget {
                             ),
                             10.height,
                             Text(
-                              MomoServices.values[index].name,
+                              MomoServices.values[index].toString(),
                               style: TextStyle(
                                 fontSize: 15.h,
                                 letterSpacing: 1.0,

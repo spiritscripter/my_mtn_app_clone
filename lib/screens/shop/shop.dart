@@ -15,7 +15,32 @@ enum ShopList {
   just4u,
   callAbroad,
   callerTunez,
-  smsPlus
+  smsPlus;
+
+  IconData get icon {
+    return switch (this) {
+      ShopList.airtime => Icons.phone_in_talk_rounded,
+      ShopList.data => Icons.data_usage_outlined,
+      ShopList.broadband => Icons.wifi_rounded,
+      ShopList.mashup => Icons.storage_rounded,
+      ShopList.just4u => Icons.card_giftcard_rounded,
+      ShopList.callAbroad => Icons.call_rounded,
+      ShopList.callerTunez => Icons.music_note_rounded,
+      ShopList.smsPlus => Icons.email_outlined,
+    };
+  }
+
+  @override
+  String toString() => switch (this) {
+        ShopList.airtime => 'Airtime',
+        ShopList.data => 'Data',
+        ShopList.broadband => 'Broadband',
+        ShopList.mashup => 'Mashup',
+        ShopList.just4u => 'Just4U',
+        ShopList.callAbroad => 'Call Abroad',
+        ShopList.callerTunez => 'Caller Tunez',
+        ShopList.smsPlus => 'SMS Plus',
+      };
 }
 
 extension ShopListExtension on ShopList {
@@ -136,7 +161,7 @@ class ShopScreen extends StatelessWidget {
                                   ),
                                   5.height,
                                   Text(
-                                    ShopList.values[index].name,
+                                    ShopList.values[index].toString(),
                                     style: TextStyle(
                                       fontSize: 15.h,
                                       fontWeight: FontWeight.w600,

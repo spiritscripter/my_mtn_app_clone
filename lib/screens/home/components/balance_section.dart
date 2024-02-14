@@ -4,10 +4,12 @@ import 'package:my_mtn_app/shared/color_constants.dart';
 
 import '../../widgets/reusable_widgets.dart';
 
-enum BalanceType { airtime, data, sms, broadband }
+enum BalanceType {
+  airtime,
+  data,
+  sms,
+  broadband;
 
-// map the quick access type to the corresponding string value
-extension BalanceTypeExtension on BalanceType {
   IconData get icon {
     switch (this) {
       case BalanceType.airtime:
@@ -26,20 +28,13 @@ extension BalanceTypeExtension on BalanceType {
     }
   }
 
-  String get name {
-    switch (this) {
-      case BalanceType.airtime:
-        return 'AIRTIME';
-      case BalanceType.data:
-        return 'DATA';
-      case BalanceType.broadband:
-        return 'BROADBAND';
-      case BalanceType.sms:
-        return 'SMS';
-      default:
-        return '';
-    }
-  }
+  @override
+  String toString() => switch (this) {
+        BalanceType.airtime => 'AIRTIME',
+        BalanceType.data => 'DATA',
+        BalanceType.broadband => 'BROADBAND',
+        BalanceType.sms => 'SMS'
+      };
 }
 
 class BalanceSection extends StatelessWidget {
@@ -143,7 +138,7 @@ class BalanceSection extends StatelessWidget {
                 ),
                 5.width,
                 Text(
-                  balanceType.name,
+                  balanceType.toString(),
                   style: TextStyle(
                     fontSize: 15.h,
                     fontWeight: FontWeight.w600,
@@ -179,15 +174,15 @@ class BalanceSection extends StatelessWidget {
                   ),
                 ),
                 Divider(color: Colors.grey.withOpacity(0.2)),
-                if (balanceType == BalanceType.broadband) ...[
+                if (balanceType == BalanceType.broadband)
                   Text(
                     "CLICK HERE",
                     style: TextStyle(
                       fontSize: 12.h,
                       fontWeight: FontWeight.w700,
                     ),
-                  ),
-                ] else
+                  )
+                else
                   Text(
                     "BONUS :",
                     style: TextStyle(
