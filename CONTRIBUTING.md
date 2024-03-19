@@ -11,15 +11,15 @@ There are many ways you can contribute to this project. Here's a quick guide to 
    Install the latest Flutter SDK following the official guide: https://docs.flutter.dev/get-started/install
    Clone this repository using git:
 
-git clone https://github.com/EAshitey/my_mtn_app_clone.git
+         git clone https://github.com/EAshitey/my_mtn_app_clone.git
 
-    Navigate to the project directory:
+Navigate to the project directory: 
 
-cd <my_mtn_app_clone>
+      cd my_mtn_app_clone
 
-    Run the following command to install dependencies:
+Run the following command to install dependencies:
 
-flutter pub get
+      flutter pub get
 
 2. Finding Issues to Work On:
 
