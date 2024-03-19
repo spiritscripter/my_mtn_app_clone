@@ -1,4 +1,4 @@
-<img src="mtn_clone.png" alt="MTN Ghana App Clone Screenshot" width="900">
+<img src="mtn_clone.png" alt="MTN Ghana App Clone Screenshot" width="800">
 
 # MyMTN Clone - A Clone of the MTN Ghana App
 
@@ -12,6 +12,14 @@ MyMTN is a clone of the official MTN Ghana app focusing solely on replicating th
 
 - **Cloned UI:** Explore the app's design and layout including sections like Momo, Account Balance, Shop etc.
 - **Open Source:** Feel free to contribute to the project by forking the repository and making pull requests.
+
+## Navigation
+
+We're using `auto_route` for navigation in this project. `auto_route` is a code generation library that simplifies routing in Flutter apps by automatically generating route management code for you.
+- Specify all your routes under navigation/router.dart 
+   ```run 'dart run build_runner watch build -delete-conflicting-outputs' to run the auto_route generator
+   ```
+
 
 ## Requirements
 
