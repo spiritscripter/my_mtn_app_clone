@@ -38,7 +38,7 @@ We recommend browsing the "Issues" section of this repository to find bugs, feat
 4. Submitting a Pull Request:
 
    Once you're happy with your changes, push your code to your forked repository on GitHub.
-   Create a pull request from your forked repository to the main branch of this project.
+   Create a pull request from your forked repository to the dev branch of this project.
    In your pull request description, mention the issue you've addressed and provide a brief explanation of your changes.
 
 ## Coding Style and Formatting:
