@@ -1,35 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:my_mtn_app/helpers/enums/momo_services_enum.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 import 'package:my_mtn_app/screens/widgets/header.dart';
 import 'package:my_mtn_app/screens/widgets/offers.dart';
 import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
 import 'package:my_mtn_app/shared/app_background.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
-
-enum MomoServices {
-  send,
-  statement,
-  cashout,
-  approvals;
-
-  IconData get icon {
-    return switch (this) {
-      MomoServices.send => Icons.stacked_bar_chart,
-      MomoServices.statement => Icons.stacked_line_chart,
-      MomoServices.cashout => Icons.money_rounded,
-      MomoServices.approvals => Icons.approval_rounded,
-    };
-  }
-
-  @override
-  String toString() => switch (this) {
-        MomoServices.send => 'Send Momo',
-        MomoServices.statement => 'Statement',
-        MomoServices.cashout => 'Cashout',
-        MomoServices.approvals => 'Approvals',
-      };
-}
 
 @RoutePage()
 class MomoScreen extends StatelessWidget {
