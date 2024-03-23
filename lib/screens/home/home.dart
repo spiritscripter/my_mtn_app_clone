@@ -17,12 +17,12 @@ class HomeScreen extends StatelessWidget {
     ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              10.height,
-              const Header(isHome: true),
-              AppBackground(
+        child: Column(
+          children: [
+            10.height,
+            const Header(isHome: true),
+            Expanded(
+              child: AppBackground(
                 bottomLayer: const QuickAccessSection(),
                 upperLayer: Column(
                   children: [
@@ -40,9 +40,9 @@ class HomeScreen extends StatelessWidget {
                     20.height,
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
