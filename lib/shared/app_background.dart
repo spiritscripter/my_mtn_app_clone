@@ -18,27 +18,29 @@ class AppBackground extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: upperLayer,
-          ),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 30.h,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: upperLayer,
             ),
-            decoration: const BoxDecoration(
-              color: ColorConstants.kbackground2,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 30.h,
               ),
+              decoration: const BoxDecoration(
+                color: ColorConstants.kbackground2,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                ),
+              ),
+              child: bottomLayer,
             ),
-            child: bottomLayer,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
