@@ -31,32 +31,12 @@ extension SizeExtension on num {
     double screenHeight = ScreenSize.screenHeight;
     // 812 is the layout height the designer used
 
-    // shortestSide helps determine the type of device
-    // if less than 600, then it is a phone
-    if (ScreenSize._mediaQueryData.shortestSide < 600) {
-      if (ScreenSize.orientation == Orientation.portrait) {
-        return (this / 812.0) * screenHeight;
-      } else {
-        return (this / 375.0) * screenHeight;
-      }
-    }
-
     return (this / 812.0) * screenHeight;
   }
 
   double get w {
     double screenWidth = ScreenSize.screenWidth;
     // 375 is the layout width that designer use
-
-    // shortestSide helps determine the type of device
-    // if less than 600, then it is a phone
-    if (ScreenSize._mediaQueryData.shortestSide < 600) {
-      if (ScreenSize.orientation == Orientation.portrait) {
-        return (this / 375.0) * screenWidth;
-      } else {
-        return (this / 812.0) * screenWidth;
-      }
-    }
 
     return (this / 375.0) * screenWidth;
   }
