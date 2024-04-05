@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_mtn_app/helpers/enums/balance_type_enum.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 import 'package:my_mtn_app/shared/color_constants.dart';
 
@@ -24,7 +23,7 @@ class BalanceSection extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                3.width,
+                SizedBox(width: 3.w),
                 GestureDetector(
                   onTap: () {},
                   child: Icon(
@@ -37,7 +36,7 @@ class BalanceSection extends StatelessWidget {
             buildViewAllBtn(),
           ],
         ),
-        15.height,
+        SizedBox(height: 15.h),
         GridView.builder(
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -104,7 +103,7 @@ class BalanceSection extends StatelessWidget {
                   balanceType.icon,
                   size: 15.h,
                 ),
-                5.width,
+                SizedBox(width: 5.w),
                 Text(
                   balanceType.toString(),
                   style: TextStyle(

@@ -52,13 +52,13 @@ class MoreScreen extends StatelessWidget {
               ],
             ),
             // Add more widgets here
-            70.height,
+            SizedBox(height: 70.h),
             Text('MY MTN GHANA',
                 style: TextStyle(
                   fontSize: 20.h,
                   fontWeight: FontWeight.w800,
                 )),
-            5.height,
+            SizedBox(height: 5.h),
             Text("+23300000000",
                 style: TextStyle(
                   fontSize: 15.h,
@@ -66,7 +66,7 @@ class MoreScreen extends StatelessWidget {
                   color: Colors.grey,
                   fontWeight: FontWeight.w400,
                 )),
-            10.height,
+            SizedBox(height: 10.h),
             buildSecondaryBtn(),
 
             const Spacer(),
@@ -89,72 +89,72 @@ class MoreScreen extends StatelessWidget {
                           color: Colors.grey,
                           fontWeight: FontWeight.w900,
                         )),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Row(
                       mainAxisSize: mainMin,
                       mainAxisAlignment: mainSpaceEvenly,
                       children: [
                         buildOptionsCard(
                             Icons.star_border_rounded, 'Send\nFeedback'),
-                        20.width,
+                        SizedBox(width: 20.w),
                         buildOptionsCard(Icons.favorite_border_rounded,
                             'Manage\nSubscriptions'),
                       ],
                     ),
-                    28.height,
+                    SizedBox(height: 28.h),
                     Text('Get More From MTN',
                         style: TextStyle(
                           fontSize: 18.h,
                           color: Colors.grey,
                           fontWeight: FontWeight.w900,
                         )),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Row(
                       mainAxisSize: mainMin,
                       mainAxisAlignment: mainSpaceEvenly,
                       children: [
                         buildOptionsCard(
                             Icons.app_shortcut_rounded, 'Discover\nApps'),
-                        20.width,
+                        SizedBox(width: 20.w),
                         buildOptionsCard(
                             Icons.call_rounded, 'Request\nBroadband'),
-                        20.width,
+                        SizedBox(width: 20.w),
                         buildOptionsCard(Icons.sim_card_rounded, 'Get\nE-sim'),
-                        20.width,
+                        SizedBox(width: 20.w),
                         buildOptionsCard(
                             Icons.play_circle_outline_rounded, 'Play\n'),
                       ],
                     ),
-                    28.height,
+                    SizedBox(height: 28.h),
                     Text('Help and Support',
                         style: TextStyle(
                           fontSize: 18.h,
                           color: Colors.grey,
                           fontWeight: FontWeight.w900,
                         )),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Row(
                       mainAxisSize: mainMin,
                       mainAxisAlignment: mainSpaceEvenly,
                       children: [
                         buildOptionsCard(
                             Icons.contacts_outlined, 'Contact\nUs'),
-                        20.width,
+                        SizedBox(width: 20.w),
                         buildOptionsCard(
                             Icons.storefront_sharp, 'Find a\nStore'),
                       ],
                     ),
-                    28.height,
+                    SizedBox(height: 28.h),
                     Text('Legal',
                         style: TextStyle(
                           fontSize: 18.h,
                           color: Colors.grey,
                           fontWeight: FontWeight.w900,
                         )),
-                    20.height,
+                    SizedBox(height: 20.h),
                     buildOptionsCard(
                         Icons.insert_drive_file_outlined, 'Legal\nPolicy'),
-                    30.height,
+                    SizedBox(height: 30.h),
 
                     // APP VERSION
                     Align(
@@ -165,12 +165,12 @@ class MoreScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           )),
                     ),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Align(
                       alignment: Alignment.center,
                       child: buildSecondaryBtn(isLogout: true),
                     ),
-                    30.height,
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),
@@ -201,7 +201,7 @@ class MoreScreen extends StatelessWidget {
             size: 15.h,
             color: Colors.black,
           ),
-          10.width,
+          SizedBox(width: 10.w),
           Text(
             isLogout ? 'LOGOUT' : 'MY ACCOUNT',
             style: TextStyle(
@@ -239,7 +239,7 @@ class MoreScreen extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
-        15.height,
+        SizedBox(height: 15.h),
         Text(title,
             textAlign: TextAlign.center,
             style: TextStyle(

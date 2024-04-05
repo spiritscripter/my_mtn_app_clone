@@ -20,7 +20,7 @@ class QuickAccessSection extends StatelessWidget {
             buildViewAllBtn(),
           ],
         ),
-        20.height,
+        SizedBox(height: 20.h),
         GridView.builder(
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -35,7 +35,7 @@ class QuickAccessSection extends StatelessWidget {
             return buildQuickAccessCard(type: QuickAccessType.values[index]);
           },
         ),
-        40.height,
+        SizedBox(height: 40.h),
         const Offers(headerText: 'Pulse Offers and Loyalty'),
       ],
     );
@@ -58,7 +58,7 @@ class QuickAccessSection extends StatelessWidget {
             size: 20.h,
           ),
         ),
-        5.width,
+        SizedBox(width: 5.w),
         Text(
           type.name,
           style: TextStyle(

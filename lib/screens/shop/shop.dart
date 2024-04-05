@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:my_mtn_app/helpers/enums/shop_list_enum.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 import 'package:my_mtn_app/screens/widgets/offers.dart';
 import 'package:my_mtn_app/screens/widgets/reusable_widgets.dart';
@@ -28,7 +27,7 @@ class ShopScreen extends StatelessWidget {
                       color: ColorConstants.kprimary,
                       height: 150.h,
                     ),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -37,7 +36,7 @@ class ShopScreen extends StatelessWidget {
                         crossAxisAlignment: crossStart,
                         children: [
                           buildTextHeader("What do you need?"),
-                          10.height,
+                          SizedBox(height: 10.h),
                           GridView.builder(
                             itemCount: ShopList.values.length,
                             shrinkWrap: true,
@@ -62,7 +61,7 @@ class ShopScreen extends StatelessWidget {
                                       color: Colors.white,
                                     ),
                                   ),
-                                  5.height,
+                                  SizedBox(height: 5.h),
                                   Text(
                                     ShopList.values[index].toString(),
                                     style: TextStyle(
@@ -77,7 +76,7 @@ class ShopScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    20.height,
+                    SizedBox(height: 20.h),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       decoration: const BoxDecoration(
@@ -88,9 +87,9 @@ class ShopScreen extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          50.height,
+                          SizedBox(height: 50.h),
                           const Offers(headerText: 'Pulse Offers and Loyalty'),
-                          100.height,
+                          SizedBox(height: 100.h),
                         ],
                       ),
                     ),

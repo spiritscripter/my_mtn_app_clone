@@ -21,7 +21,7 @@ Row buildViewAllBtn() {
           fontWeight: FontWeight.w400,
         ),
       ),
-      2.width,
+      SizedBox(width: 2.w),
       CircleAvatar(
         radius: 5,
         backgroundColor: Colors.black,

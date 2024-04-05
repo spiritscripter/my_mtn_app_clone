@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:my_mtn_app/helpers/enums/momo_services_enum.dart';
 import 'package:my_mtn_app/helpers/helpers_export.dart';
 import 'package:my_mtn_app/screens/widgets/header.dart';
 import 'package:my_mtn_app/screens/widgets/offers.dart';
@@ -23,7 +22,7 @@ class MomoScreen extends StatelessWidget {
               upperLayer: Column(
                 crossAxisAlignment: crossStart,
                 children: [
-                  20.height,
+                  SizedBox(height: 20.h),
                   Text(
                     'Balance',
                     style: TextStyle(
@@ -31,12 +30,12 @@ class MomoScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  10.height,
+                  SizedBox(height: 10.h),
                   const Divider(
                     color: Colors.grey,
                     thickness: 1,
                   ),
-                  10.height,
+                  SizedBox(height: 10.h),
                   Container(
                     height: 110.h,
                     width: double.infinity,
@@ -68,13 +67,13 @@ class MomoScreen extends StatelessWidget {
                                 bottomRight: Radius.circular(10),
                               ),
                             )),
-                        12.width,
+                        SizedBox(width: 12.w),
                         Image.asset(
                           'assets/momo.png',
                           height: 50.h,
                           width: 50.w,
                         ),
-                        12.width,
+                        SizedBox(width: 12.w),
                         Column(
                           mainAxisAlignment: mainCenter,
                           crossAxisAlignment: crossStart,
@@ -89,7 +88,7 @@ class MomoScreen extends StatelessWidget {
                                     size: 10.h,
                                   ),
                                 ),
-                                5.width,
+                                SizedBox(width: 5.w),
                                 Text(
                                   'MoMo Balance',
                                   style: TextStyle(
@@ -132,14 +131,14 @@ class MomoScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  30.height,
+                  SizedBox(height: 30.h),
                 ],
               ),
               bottomLayer: Column(
                 crossAxisAlignment: crossStart,
                 children: [
                   buildTextHeader('Services'),
-                  20.height,
+                  SizedBox(height: 20.h),
                   GridView.builder(
                     itemCount: MomoServices.values.length,
                     shrinkWrap: true,
@@ -171,7 +170,7 @@ class MomoScreen extends StatelessWidget {
                               size: 30.h,
                             ),
                           ),
-                          10.height,
+                          SizedBox(height: 10.h),
                           Text(
                             MomoServices.values[index].toString(),
                             style: TextStyle(
@@ -184,7 +183,7 @@ class MomoScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  10.height,
+                  SizedBox(height: 10.h),
                   const Offers(headerText: "Momo App"),
                 ],
               ),

@@ -16,7 +16,7 @@ class Offers extends StatelessWidget {
       crossAxisAlignment: crossStart,
       children: [
         buildTextHeader(headerText),
-        20.height,
+        SizedBox(height: 20.h),
         Container(
           height: 100.h,
           width: double.infinity,

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:my_mtn_app/helpers/size_config.dart';
-import 'package:my_mtn_app/helpers/sizedbox_ext.dart';
+
 import 'package:my_mtn_app/shared/app_background.dart';
 
 import '../widgets/header.dart';
@@ -19,16 +19,16 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            10.height,
+            SizedBox(height: 10.h),
             const Header(isHome: true),
             Expanded(
               child: AppBackground(
                 bottomLayer: const QuickAccessSection(),
                 upperLayer: Column(
                   children: [
-                    20.height,
+                    SizedBox(height: 20.h),
                     const BalanceSection(),
-                    40.height,
+                    SizedBox(height: 40.h),
                     Text(
                       "Showing balances as at Jan 30 2024; 2:42:34 PM",
                       style: TextStyle(
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
-                    20.height,
+                    SizedBox(height: 20.h),
                   ],
                 ),
               ),
