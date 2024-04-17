@@ -18,7 +18,7 @@ MyMTN s a clone of the official MTN Ghana app focusing solely on replicatig the 
 We're using `auto_route` for navigation in this project. `auto_route` is a code library that simplifies routing in Flutter apps by automatically generating route management code for you.
 - Specify all your routes under navigation/router.dart 
    ```
-      run 'dart run build_runner watch build -delete-conflicting-outputs' to run the auto_route generator
+      run 'dart run build_runner watch build --delete-conflicting-outputs' to run the auto_route generator
    ```
 
 

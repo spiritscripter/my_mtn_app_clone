@@ -7,12 +7,12 @@ environment:
   sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
-  auto_route: ^7.8.4
+  auto_route: ^8.0.3
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  auto_route_generator: ^7.3.2
+  auto_route_generator: ^8.0.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
