@@ -118,7 +118,7 @@ class BalanceSection extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: 10.w,
-              vertical: 7.h,
+              vertical: 6.h,
             ),
             decoration: const BoxDecoration(
                 color: ColorConstants.kbackground,
@@ -145,7 +145,7 @@ class BalanceSection extends StatelessWidget {
                   Text(
                     "CLICK HERE",
                     style: TextStyle(
-                      fontSize: 12.h,
+                      fontSize: 10.h,
                       fontWeight: FontWeight.w700,
                     ),
                   )
@@ -153,7 +153,7 @@ class BalanceSection extends StatelessWidget {
                   Text(
                     "BONUS :",
                     style: TextStyle(
-                      fontSize: 12.h,
+                      fontSize: 10.h,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
